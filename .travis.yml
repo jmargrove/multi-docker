@@ -9,8 +9,8 @@ script:
   - docker run grovejam/react-test npm test -- --coverage
 
 after_success:
-   - docker build -t grovejam/multi-client ./client
-   - docker build -t grovejam/multi-nginx ./nginx
+  - docker build -t grovejam/multi-client ./client
+  - docker build -t grovejam/multi-nginx ./nginx
   - docker build -t grovejam/multi-worker ./worker
   - docker build -t grovejam/multi-server ./server
   # Log in to the docker CLI
