@@ -16,7 +16,7 @@ after_success:
 
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  # - docker push grovejam/multi-client
-  # - docker push grovejam/multi-nginx
-  # - docker push grovejam/multi-server
-  # - docker push grovejam/multi-worker
+  - docker push grovejam/multi-client
+  - docker push grovejam/multi-nginx
+  - docker push grovejam/multi-server
+  - docker push grovejam/multi-worker
