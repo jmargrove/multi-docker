@@ -7,12 +7,12 @@ before_install:
 
 script:
   - docker run grovejam/react-test npm test -- --coverage
-# after_success:
-#   - docker build -t grovejam/multi-client ./client
-#   - docker build -t grovejam/multi-nginx ./nginx
-#   - docker build -t grovejam/multi-server ./server
-#   - docker build -t grovejam/multi-worker ./worker
 
+after_success:
+  - docker build -t grovejam/multi-client ./client
+  - docker build -t grovejam/multi-nginx ./nginx
+  - docker build -t grovejam/multi-server ./server
+  - docker build -t grovejam/multi-worker ./worker
 # script:
 #   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 #   - docker push grovejam/multi-client
