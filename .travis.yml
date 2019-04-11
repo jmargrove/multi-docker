@@ -13,9 +13,10 @@ after_success:
   - docker build -t grovejam/multi-nginx ./nginx
   - docker build -t grovejam/multi-server ./server
   - docker build -t grovejam/multi-worker ./worker
-# script:
-#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-#   - docker push grovejam/multi-client
-#   - docker push grovejam/multi-nginx
-#   - docker push grovejam/multi-server
-#   - docker push grovejam/multi-worker
+
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # - docker push grovejam/multi-client
+  # - docker push grovejam/multi-nginx
+  # - docker push grovejam/multi-server
+  # - docker push grovejam/multi-worker
