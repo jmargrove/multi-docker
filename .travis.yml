@@ -13,7 +13,9 @@ after_success:
   - docker build -t grovejam/multi-nginx ./nginx
   - docker build -t grovejam/multi-server ./server
   - docker build -t grovejam/multi-worker ./worker
+  # Logs in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Takes container images and pushes them to docker hub
   - docker push grovejam/multi-client
   - docker push grovejam/multi-nginx
   - docker push grovejam/multi-server
